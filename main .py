@@ -12,7 +12,7 @@ st.markdown("Welcome to the Power Generator! Click the button below to generate 
 
 # ===========================
 # Main Function for Streamlit
-# ===========================
+# =========================== 
 def main():
     """
     Main function to handle the entire process of:
