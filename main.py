@@ -12,7 +12,7 @@ st.markdown("Welcome to the Power Generator! Click the button below to generate 
 
 # ===========================
 # Main Function for Streamlit
-# =========================== 
+# ===========================
 def main():
     """
     Main function to handle the entire process of:
@@ -55,17 +55,21 @@ def main():
                 stats_part = trait_description.split("Stats:")[1].strip()
                 for stat in stats_part.split(","):
                     parts = stat.strip().split()
-                    stat_value = parts[0].replace("+", "").strip()
-                    stat_name = parts[1].strip()
-                    trait_stats[stat_name.lower()] = int(stat_value)
+                    stat_value = int(parts[0].replace("+", "").replace("-", "-"))
+                    stat_name = parts[1].strip().lower()
+                    trait_stats[stat_name] = stat_value
 
             # Display power details
-            st.write(f"##### {theme} ({level}) - {points} points")
+            st.write("# Distribute your points!")
+            st.write("You have your THEME in caps, which is what the power will be based around, its (level) in brackets, and the points you have for distribution.")
+            st.write(f"### {theme} ({level}) - {points} points")
             
             # Print stats with +Trait if applicable
             st.write("#### Stats")
             for stat in ["attack", "defense", "mobility", "range", "control", "endurance"]:
                 base_stat = f"0/{cap}"
+                if stat in trait_stats and trait_stats[stat] != 0:
+                    base_stat += " +Trait"
                 st.write(f"- **{stat.capitalize()}:** {base_stat}")
 
             # Print class and trait details
@@ -73,8 +77,6 @@ def main():
             st.write(f"**{class_name}:** {class_description}")
             st.write("#### TRAITS")
             st.write(f"{trait_description}")
-
-            # Print trait bonuses if applicable
 
             # Separator between powers
             st.write("-----")
