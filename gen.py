@@ -23,28 +23,30 @@ def roll_abundance():
 # ===========================
 
 def generate_power_levels(abundance):
-    base_levels = []  # Stores the rolls with variance
-    total = 0         # Tracks the sum of all rolls
+    base_levels = []
+    total_with_decimals = 0.0
 
     if abundance == 9:
+        # First roll between 5-10 + (0.0-0.9)
         first_roll = random.randint(5, 10) + random.uniform(0.0, 0.9)
-        first_roll = round(first_roll, 1)
         base_levels.append(first_roll)
-        total += int(first_roll)
-
-        if total < 9:
-            while total < 9:
-                roll = random.randint(1, 4) + random.uniform(0.0, 0.9)
-                roll = round(roll, 1)
-                base_levels.append(roll)
-                total += int(roll)
+        total_with_decimals += first_roll
     else:
-        while total < abundance:
-            roll = random.randint(1, 4) + random.uniform(0.0, 0.9)
-            roll = round(roll, 1)
-            base_levels.append(roll)
-            total += int(roll)
-
+        # First roll between 1-4 + (0.0-0.9)
+        first_roll = random.randint(1, 4) + random.uniform(0.0, 0.9)
+        base_levels.append(first_roll)
+        total_with_decimals += first_roll
+    
+    # Continue rolling until abundance is reached dynamically
+    while total_with_decimals < abundance:
+        roll = random.randint(1, 4) + random.uniform(0.0, 0.9)
+        
+        if total_with_decimals + roll > abundance:
+            break  # Stops rolling when exceeding abundance without hard capping
+        
+        base_levels.append(roll)
+        total_with_decimals += roll
+    
     print(f"Generated Power Levels for Abundance {abundance}: {base_levels}")
     return base_levels
 
