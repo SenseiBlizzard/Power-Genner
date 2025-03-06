@@ -16,7 +16,8 @@ def generate_character():
 # ===========================
 
 def roll_with_variance(base):
-    return round(random.uniform(base, base + 0.9), 1)
+    variance_options = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    return round(base + random.choice(variance_options), 1)
 
 def roll_abundance():
     return random.randint(1, 9)
@@ -31,13 +32,13 @@ def generate_power_levels(abundance):
 
     if abundance == 9:
         first_roll = random.randint(5, 10)
-        first_roll_with_variance = round(first_roll + random.uniform(0.0, 0.9), 1)
+        first_roll_with_variance = roll_with_variance(first_roll)
         base_levels.append(first_roll_with_variance)
         total += first_roll_with_variance
 
         while total < 9:
             roll = random.randint(1, 4)
-            roll_with_variance = round(roll + random.uniform(0.0, 0.9), 1)
+            roll_with_variance = roll_with_variance(roll)
             base_levels.append(roll_with_variance)
             total += roll_with_variance
             if total >= abundance:
@@ -45,7 +46,7 @@ def generate_power_levels(abundance):
     else:
         while total < abundance:
             roll = random.randint(1, 4)
-            roll_with_variance = round(roll + random.uniform(0.0, 0.9), 1)
+            roll_with_variance = roll_with_variance(roll)
             base_levels.append(roll_with_variance)
             total += roll_with_variance
             if total >= abundance:
@@ -56,7 +57,7 @@ def generate_power_levels(abundance):
     print(f"Total after Variance: {adjusted_total}")
     
     return base_levels
-
+    
 # ===========================
 # Stat Cap and Points Calculation
 # ===========================
