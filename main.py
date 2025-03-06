@@ -6,7 +6,7 @@ from gen import generate_powers, generate_power_levels
 # Streamlit Configuration
 # ===========================
 st.set_page_config(page_title="Power Generator", layout="centered")
-st.title("🌀 Power Generator")
+st.title("\U0001F300 Power Generator")
 
 st.markdown("Welcome to the Power Generator! Click the button below to generate random power details.")
 
@@ -24,7 +24,7 @@ def main():
     if st.button("Generate Powers ⚡"):
         # Step 1: Roll for abundance
         abundance_roll = random.randint(1, 9)  # Directly rolls for abundance without reroll option
-        st.subheader(f"🎲 Abundance Roll: {abundance_roll}")
+        st.subheader(f"\U0001F3B2 Abundance Roll: {abundance_roll}")
 
         # Step 2: Generate initial power levels array based on abundance
         base_levels = generate_power_levels(abundance_roll)
@@ -50,16 +50,6 @@ def main():
             class_description = power.get('class_description', 'No description available.')
             trait_description = power.get('trait_description', 'No trait description.')
 
-            # Extract trait stats if applicable
-            trait_stats = {}
-            if "Stats:" in trait_description:
-                stats_part = trait_description.split("Stats:")[1].strip()
-                for stat in stats_part.split(","):
-                    parts = stat.strip().split()
-                    stat_value = int(parts[0].replace("+", "").replace("-", "-"))
-                    stat_name = parts[1].strip().lower()
-                    trait_stats[stat_name] = stat_value
-
             # Display power details
             st.write("# Distribute your points!")
             st.write("You have your THEME in caps, which is what the power will be based around, its (level) in brackets, and the points you have for distribution.")
@@ -69,8 +59,6 @@ def main():
             st.write("#### Stats")
             for stat in ["attack", "defense", "mobility", "range", "control", "endurance"]:
                 base_stat = f"0/{cap}"
-                if stat in trait_stats and trait_stats[stat] != 0:
-                    base_stat += " +Trait"
                 st.write(f"- **{stat.capitalize()}:** {base_stat}")
 
             # Print class and trait details
