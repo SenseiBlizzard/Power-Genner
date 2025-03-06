@@ -70,13 +70,13 @@ def get_stat_cap_and_points(level):
 
 def calculate_extra_stat_points(decimal_level):
     decimal_part = decimal_level - int(decimal_level)
-    if 0.0 <= decimal_part < 0.2:
+    if 0.0 <= decimal_part <= 0.1:
         return 0
-    elif 0.2 <= decimal_part < 0.4:
+    elif 0.2 <= decimal_part <= 0.3:
         return 1
-    elif 0.4 <= decimal_part < 0.6:
+    elif 0.4 <= decimal_part <= 0.5:
         return 2
-    elif 0.6 <= decimal_part < 0.8:
+    elif 0.6 <= decimal_part <= 0.7:
         return 3
     elif 0.8 <= decimal_part <= 0.9:
         return 4
