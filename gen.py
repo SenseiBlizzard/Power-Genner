@@ -17,7 +17,7 @@ def generate_character():
 
 def roll_with_variance(base):
     variance_options = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-    return round(base + random.choice(variance_options), 1)
+    return base + random.choice(variance_options)
 
 def roll_abundance():
     return random.randint(1, 9)
@@ -70,18 +70,12 @@ def get_stat_cap_and_points(level):
     }.get(level, (3, 5))
 
 def calculate_extra_stat_points(decimal_level):
-    decimal_part = decimal_level - int(decimal_level)
-    if 0.0 <= decimal_part <= 0.1:
-        return 0
-    elif 0.2 <= decimal_part <= 0.3:
-        return 1
-    elif 0.4 <= decimal_part <= 0.5:
-        return 2
-    elif 0.6 <= decimal_part <= 0.7:
-        return 3
-    elif 0.8 <= decimal_part <= 0.9:
-        return 4
-    return 0
+    decimal_part = round(decimal_level - int(decimal_level), 1)  # Ensure exact match
+    extra_points_lookup = {
+        0.0: 0, 0.1: 0, 0.2: 1, 0.3: 1, 0.4: 2,
+        0.5: 2, 0.6: 3, 0.7: 3, 0.8: 4, 0.9: 4
+    }
+    return extra_points_lookup.get(decimal_part, 0)
 
 # ===========================
 # Power Details Generation
