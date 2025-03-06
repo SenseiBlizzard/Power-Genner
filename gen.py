@@ -38,17 +38,17 @@ def generate_power_levels(abundance):
 
         while total < 9:
             roll = random.randint(1, 4)
-            roll_with_variance = roll_with_variance(roll)
-            base_levels.append(roll_with_variance)
-            total += roll_with_variance
+            roll_with_variance_value = roll_with_variance(roll)
+            base_levels.append(roll_with_variance_value)
+            total += roll_with_variance_value
             if total >= abundance:
                 break
     else:
         while total < abundance:
             roll = random.randint(1, 4)
-            roll_with_variance = roll_with_variance(roll)
-            base_levels.append(roll_with_variance)
-            total += roll_with_variance
+            roll_with_variance_value = roll_with_variance(roll)
+            base_levels.append(roll_with_variance_value)
+            total += roll_with_variance_value
             if total >= abundance:
                 break
 
