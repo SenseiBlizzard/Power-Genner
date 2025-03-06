@@ -13,6 +13,7 @@ st.markdown("Welcome to the Power Generator! Click the button below to generate 
 # ===========================
 # Main Function for Streamlit
 # ===========================
+
 def main():
     """
     Main function to handle the entire process of:
@@ -43,7 +44,7 @@ def main():
         for idx, power in enumerate(result['powers'], start=1):
             theme = power.get('theme', 'Unknown').upper()
             level = power.get('level', 'N/A')
-            points = power.get('total_points', 0)  # Use 'total_points' instead
+            points = min(power.get('total_points', 0), 50)  # Ensure max 50 points
             cap = power.get('cap', 'N/A')
             class_name = power.get('class_name', 'Unknown')
             class_description = power.get('class_description', 'No description available.')
@@ -84,5 +85,6 @@ def main():
 # ===========================
 # Run the Streamlit App
 # ===========================
+
 if __name__ == "__main__":
     main()
