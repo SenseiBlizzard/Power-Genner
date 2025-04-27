@@ -31,7 +31,7 @@ def generate_power_levels(abundance):
     total = 0
 
     if abundance == 9:
-        first_roll = random.randint(5, 10)
+        first_roll = random.randint(5, 7)
         first_roll_with_variance = roll_with_variance(first_roll)
         base_levels.append(first_roll_with_variance)
         total += first_roll_with_variance
