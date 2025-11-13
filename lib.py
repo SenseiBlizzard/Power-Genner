@@ -28,8 +28,8 @@ CLASSES = {
     "Striker": "Strikers have powers that are touch-based or melee ranged.",
     "Thinker": "Thinkers have powers related to knowledge, skills, and enhanced perception.",
     "Tinker": "Tinkers fabricate things, with stats reflecting the gear they can make, often based around a theme.",
-    "Trump": "Trumps can manipulate powers in various capacities, including altering, granting, strengthening, weakening, or removing them entirely.",
-    "Reader": "Readers manifest their powers in a consistent manner; no matter what powers they receive, they always follow some known 'genre' of media. The powers given always provide a weapon/tool, a special ability, and tactical thinking, inline with the genre."
+    "Trump": "Trumps can manipulate powers in various capacities, including altering, granting, strengthening, weakening, or removing them entirely."
+# "Reader": "Readers manifest their powers in a consistent manner; no matter what powers they receive, they always follow some known 'genre' of media. The powers given always provide a weapon/tool, a special ability, and tactical thinking, inline with the genre."
 
 }
 
@@ -174,17 +174,17 @@ TRAITS = {
         "Wildcard Trump: Powers that cycle between different variants. Stats: -2 control",
         "Unlimiter Trump: Powers that remove limits or enhance abilities. Stats: +2 attack, +2 defense, +2 mobility, +2 control",
         "Invert Trump: Inverts or reverses some functions of other powers. Stats: +1 control, +1 range"
-    ],
-    "Reader": [
-        "Ancient Reader: Based on ancient civilizations; swords, spears, artifacts. Stats: +1 control, +1 endurance",
-        "Fairy Reader: Fairy tales, folklore, enchanted objects. Stats: +1 defense, +1 range",
-        "Western Reader: Gunslingers, lassoes, western weapons. Stats: +1 attack, +1 range",
-        "Techno Reader: Cyberpunk and sci-fi gear, hacking, implants. Stats: +1 range, +1 control",
-        "Soldier Reader: Modern military gear, tactics, firearms. Stats: +1 attack, +1 defense",
-        "Mystic Reader: Martial arts chi, internal energy. Stats: +1 control, +1 endurance",
-        "Pirate Reader: Cutlasses, flintlocks, mobility on ships. Stats: +1 attack, +1 mobility",
-        "Shonen Reader: Anime-style transformations, huge weapons. Stats: +1 attack, +1 mobility",
-        "Gothic Reader: Gothic horror tools, holy symbols. Stats: +1 defense, +1 endurance",
-        "Steampunk Reader: Steam gadgets and clockwork weapons. Stats: +1 attack, +1 control"
+#    ],
+#    "Reader": [
+#        "Ancient Reader: Based on ancient civilizations; swords, spears, artifacts. Stats: +1 control, +1 endurance",
+#        "Fairy Reader: Fairy tales, folklore, enchanted objects. Stats: +1 defense, +1 range",
+#        "Western Reader: Gunslingers, lassoes, western weapons. Stats: +1 attack, +1 range",
+#        "Techno Reader: Cyberpunk and sci-fi gear, hacking, implants. Stats: +1 range, +1 control",
+#        "Soldier Reader: Modern military gear, tactics, firearms. Stats: +1 attack, +1 defense",
+#        "Mystic Reader: Martial arts chi, internal energy. Stats: +1 control, +1 endurance",
+#        "Pirate Reader: Cutlasses, flintlocks, mobility on ships. Stats: +1 attack, +1 mobility",
+#        "Shonen Reader: Anime-style transformations, huge weapons. Stats: +1 attack, +1 mobility",
+#        "Gothic Reader: Gothic horror tools, holy symbols. Stats: +1 defense, +1 endurance",
+#        "Steampunk Reader: Steam gadgets and clockwork weapons. Stats: +1 attack, +1 control"
     ]
 }
