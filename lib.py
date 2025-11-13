@@ -29,7 +29,8 @@ CLASSES = {
     "Thinker": "Thinkers have powers related to knowledge, skills, and enhanced perception.",
     "Tinker": "Tinkers fabricate things, with stats reflecting the gear they can make, often based around a theme.",
     "Trump": "Trumps can manipulate powers in various capacities, including altering, granting, strengthening, weakening, or removing them entirely.",
-    "Reader": "Readers manifest their powers in a consistent manner; no matter what powers they receive, they always follow some known "genre" of media. The powers given always provide a weapon/tool, a special ability, and tactical thinking, inline with the genre."
+    "Reader": "Readers manifest their powers in a consistent manner; no matter what powers they receive, they always follow some known 'genre' of media. The powers given always provide a weapon/tool, a special ability, and tactical thinking, inline with the genre."
+
 }
 
 # ===========================
