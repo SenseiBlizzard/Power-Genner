@@ -28,7 +28,8 @@ CLASSES = {
     "Striker": "Strikers have powers that are touch-based or melee ranged.",
     "Thinker": "Thinkers have powers related to knowledge, skills, and enhanced perception.",
     "Tinker": "Tinkers fabricate things, with stats reflecting the gear they can make, often based around a theme.",
-    "Trump": "Trumps can manipulate powers in various capacities, including altering, granting, strengthening, weakening, or removing them entirely."
+    "Trump": "Trumps can manipulate powers in various capacities, including altering, granting, strengthening, weakening, or removing them entirely.",
+    "Reader": "Readers manifest their powers in a consistent manner; no matter what powers they receive, they always follow some known "genre" of media. The powers given always provide a weapon/tool, a special ability, and tactical thinking, inline with the genre."
 }
 
 # ===========================
@@ -73,20 +74,26 @@ TRAITS = {
         "Repression Brute: Abstract or indirect measures used to moderate harm. Stats: +1 attack, +1 control",
         "Negate Brute: All-or-nothing attack/defense. Stats: +2 attack, +2 defense, -5 control",
         "Regen Brute: Offers benefits over time or healing abilities. Stats: +2 endurance",
-        "Transfiguration Brute: Abilities related to transformation and revival. Stats: +1 defense, +1 endurance",
-        "Immortal Brute: Permanent change to biology, cannot heal easily. Stats: +2 attack, -1 endurance"
+        "Immortal Brute: Abilities related to transformation and revival. Stats: +1 defense, +1 endurance",
+        "Transfiguration Brute: Permanent change to biology, cannot heal easily. Stats: +2 attack, -1 endurance"
     ],
     "Changer": [
-        "Growth Changer: The power to grow extra weapons or armor. Stats: +1 attack, +1 defense",
+        "Growth Changer: The power to grow extra limbs, weapons, or armor. Stats: +1 attack, +1 defense",
         "Streamline Changer: The ability to streamline one's body, allowing for improved movement and evasion. Stats: +2 mobility",
         "Shifter Changer: The ability to alter one's appearance or human features. Stats: +1 control",
-        "Regen Changer: The use of self-targeted biokinesis, possibly to heal oneself. Stats: +2 endurance"
+        "Regen Changer: The use of self-targeted biokinesis, possibly to heal oneself. Stats: +2 endurance",
+        "Animalian Changer: Allows shifting into one or more kinds of animals. Stats: +1 attack, +1 mobility",
+        "Avatar Changer: Turn into a manifestation or embodiment of a concept. Stats: +1 control",
+        "Adaptive Changer: Progressively adapt when under stress. Stats: +1 defense, +1 endurance"
     ],
     "Master": [
         "Conjurer Master: The ability to summon or conjure minions to control. Stats: +1 attack, +1 range",
         "Puppeteer Master: The ability to control existing things, typically inorganic. Stats: +1 range, +1 control",
         "Herder Master: The ability to control existing things, typically organic. Stats: +2 range",
-        "Master Master: The ability to control other people actively or passively, either directly or by manipulating emotions or attitudes. Stats: -1 range"
+        "Master Master: The ability to control other people actively or passively, either directly or by manipulating emotions or attitudes. Stats: -1 range",
+        "Swarm Master: Creates or controls many small minions. Stats: +2 control, -1 attack, -1 endurance",
+        "Clone Master: Creates temporary or fragile duplicates of self. Stats: +1 endurance, +1 control",
+        "Elemental Master: Summons elementals or nature spirits. Stats: +1 attack, +1 range"
     ],
     "Mover": [
         "Takeoff Mover: Produces an effect on departure. Stats: +1 attack, +1 mobility",
@@ -121,14 +128,18 @@ TRAITS = {
         "Stealth Stranger: Granting invisibility, stealth, or different forms of camouflage. Stats: +1 control, +1 endurance",
         "Surprise Stranger: Enabling or benefiting surprise attacks. Stats: +1 attack, +1 control",
         "Unobserved Stranger: Granting or enhancing skills and abilities while unobserved. Stats: +2 endurance",
-        "Imitate Stranger: Imitating others in appearance, voice, and mannerisms. Stats: +2 endurance"
+        "Imitate Stranger: Imitating others in appearance, voice, and mannerisms. Stats: +2 endurance",
+        "Bait Stranger: Creates lures or false targets. Stats: +1 range, +1 endurance"
     ],
     "Striker": [
         "Empower Striker: The ability to empower weapons or other objects. Stats: +2 attack",
         "Impart Striker: The power to impart some sort of changed state on a target through touch. Stats: +2 control",
         "Armory Striker: The power to create weapons. Stats: +1 attack, +1 range",
         "Enhance Striker: Abilities that enhance melee strikes with various effects. Stats: +2 attack",
-        "Short Striker: Particularly short-ranged forms of telekinesis or elemental effects. Stats: +1 attack, +1 control"
+        "Short Striker: Particularly short-ranged forms of telekinesis or elemental effects. Stats: +1 attack, +1 control",
+        "Drain Striker: Siphons vitality/energy on touch. Stats: +1 attack, +1 endurance",
+        "Grapple Striker: Excels at restraining at close range. Stats: +1 attack, +1 control",
+        "Adaptive Striker: Strikes improve each exchange. Stats: +1 attack, +1 endurance"
     ],
     "Thinker": [
         "Combat Thinker: Powers that enable them to fight more effectively. Stats: +1 control, +1 endurance",
@@ -136,7 +147,9 @@ TRAITS = {
         "Scatterbrain Thinker: Highly adaptable power that can be molded in how it's utilized. Stats: +2 control",
         "Sense Thinker: Enhanced or augmented senses. Stats: +2 control",
         "Proficiency Thinker: Powers that enhance or grant abilities to perform, learn, or execute techniques. Stats: +1 control, +1 endurance",
-        "Social Thinker: Can manipulate, study, or control others through information or skills. Stats: +1 control"
+        "Social Thinker: Can manipulate, study, or control others through information or skills. Stats: +1 control",
+        "Seer Thinker: Sees potential futures. Stats: +1 range, -2 control",
+        "Probability Thinker: Manipulates odds subtly. Stats: +1 defense, +1 control"
     ],
     "Tinker": [
         "Hyperspecialist Tinker: Emphasis on their specialty alone. Stats: +1 attack, +1 defense, +1 mobility, +1 range, +1 control",
@@ -158,6 +171,19 @@ TRAITS = {
         "Library Trump: Abilities where one can pick between different options. Stats: -1 attack, -1 defense, -1 mobility, +1 control",
         "Disrupt Trump: Scrambling, disrupting, or altering powers. Stats: +1 control",
         "Wildcard Trump: Powers that cycle between different variants. Stats: -2 control",
-        "Unlimiter Trump: Powers that remove limits or enhance abilities. Stats: +2 attack, +2 defense, +2 mobility, +2 control"
+        "Unlimiter Trump: Powers that remove limits or enhance abilities. Stats: +2 attack, +2 defense, +2 mobility, +2 control",
+        "Invert Trump: Inverts or reverses some functions of other powers. Stats: +1 control, +1 range"
+    ],
+    "Reader": [
+        "Ancient Reader: Based on ancient civilizations; swords, spears, artifacts. Stats: +1 control, +1 endurance",
+        "Fairy Reader: Fairy tales, folklore, enchanted objects. Stats: +1 defense, +1 range",
+        "Western Reader: Gunslingers, lassoes, western weapons. Stats: +1 attack, +1 range",
+        "Techno Reader: Cyberpunk and sci-fi gear, hacking, implants. Stats: +1 range, +1 control",
+        "Soldier Reader: Modern military gear, tactics, firearms. Stats: +1 attack, +1 defense",
+        "Mystic Reader: Martial arts chi, internal energy. Stats: +1 control, +1 endurance",
+        "Pirate Reader: Cutlasses, flintlocks, mobility on ships. Stats: +1 attack, +1 mobility",
+        "Shonen Reader: Anime-style transformations, huge weapons. Stats: +1 attack, +1 mobility",
+        "Gothic Reader: Gothic horror tools, holy symbols. Stats: +1 defense, +1 endurance",
+        "Steampunk Reader: Steam gadgets and clockwork weapons. Stats: +1 attack, +1 control"
     ]
 }
