@@ -73,6 +73,6 @@ def main():
 # ===========================
 # Run the Streamlit App
 # ===========================
-
+# to run type streamlit run main.py
 if __name__ == "__main__":
     main()
