@@ -92,9 +92,9 @@ TRAITS = {
         "Puppeteer Master: The ability to control existing things, typically inorganic. Stats: +1 range, +1 control",
         "Herder Master: The ability to control existing things, typically organic. Stats: +2 range",
         "Master Master: The ability to control other people actively or passively, either directly or by manipulating emotions or attitudes. Stats: -1 range",
-        "Swarm Master: Creates or controls many small minions. Stats: +2 control, -1 attack, -1 endurance",
+        "Swarm Master: The ability to create or control multiple small objects or minions, overwhelming foes with numbers. Stats: +2 control, -1 attack, -1 endurance",
         "Clone Master: Creates temporary or fragile duplicates of self. Stats: +1 endurance, +1 control",
-        "Elemental Master: Summons elementals or nature spirits. Stats: +1 attack, +1 range"
+        "Elemental Master: Summons elementals or controls forces of nature as “minions. Stats: +1 attack, +1 range"
     ],
     "Mover": [
         "Takeoff Mover: Produces an effect on departure. Stats: +1 attack, +1 mobility",
