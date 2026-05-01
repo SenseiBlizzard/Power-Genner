@@ -16,6 +16,9 @@ def generate_character():
 # ===========================
 
 def roll_with_variance(base):
+    # no power can go above 6.0
+    if base >= 6:
+        return 6.0
     variance_options = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     return base + random.choice(variance_options)
 
@@ -31,7 +34,7 @@ def generate_power_levels(abundance):
     total = 0
 
     if abundance == 9:
-        first_roll = random.randint(5, 7)
+        first_roll = random.randint(5, 6)
         first_roll_with_variance = roll_with_variance(first_roll)
         base_levels.append(first_roll_with_variance)
         total += first_roll_with_variance
