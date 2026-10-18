@@ -1,5 +1,5 @@
 import random
-from lib import CLASSES, TRAITS, WORDS
+from lib import CLASSES, TRAITS, WORDS, CLASS_WEIGHTS, TRAIT_WEIGHTS
 
 # ===========================
 # Character Generation
@@ -7,8 +7,19 @@ from lib import CLASSES, TRAITS, WORDS
 
 def generate_character():
     word = random.choice(WORDS)
-    char_class = random.choice(list(CLASSES.keys()))
-    subclass = random.choice(TRAITS[char_class])
+    class_names = list(CLASSES.keys())
+    char_class = random.choices(
+        class_names,
+        weights=[CLASS_WEIGHTS.get(name, 100) for name in class_names],
+        k=1
+    )[0]
+
+    traits = TRAITS[char_class]
+    subclass = random.choices(
+        traits,
+        weights=[TRAIT_WEIGHTS.get(char_class, {}).get(trait.split(':', 1)[0], 100) for trait in traits],
+        k=1
+    )[0]
     return word, char_class, subclass
 
 # ===========================
@@ -58,9 +69,9 @@ def generate_power_levels(abundance):
     adjusted_total = sum(base_levels)
     print(f"Generated Power Levels for Abundance {abundance}: {base_levels}")
     print(f"Total after Variance: {adjusted_total}")
-    
+
     return base_levels
-    
+
 # ===========================
 # Stat Cap and Points Calculation
 # ===========================
@@ -89,12 +100,12 @@ def generate_powers(abundance, base_levels):
     for level in base_levels:
         word, char_class, subclass = generate_character()
         class_desc = CLASSES[char_class]
-        
+
         whole_level = int(level)
         cap, base_points = get_stat_cap_and_points(whole_level)
         extra_points = calculate_extra_stat_points(level)
         total_points = min(base_points + extra_points, 50)  # Ensure max 50 points
-        
+
         power_details.append({
             "level": level,
             "whole_level": whole_level,
